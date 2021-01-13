@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hero Section */
+#hero {
+    background-image: url(./img/working.jpg);
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+}
+
+#hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .5;
+    z-index: -1;
+}
+
+#hero .hero {
+    justify-content: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+#hero h1 {
+    display: block;
+    width: fit-content;
+    font-size: 4rem;
+    position: relative;
+    color: transparent;
+    animation: text-reveal .5s ease forwards;
+    animation-delay: 1.5s;
+}
+
+#hero h1:nth-child(1){
+    animation-delay: 1.5s;
+}
+#hero h1:nth-child(2){
+    animation-delay: 2.5s;
+}
+#hero h1:nth-child(3){
+    animation: text-reveal-name .5s ease forwards;
+    animation-delay: 3.5s;
+}
+
+#hero h1 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: crimson;
+    animation: text-reveal-box 1s ease;
+    animation-delay: 1s;
+}
+
+#hero h1:nth-child(1) span {
+    animation-delay: 1s;
+}
+#hero h1:nth-child(2) span {
+    animation-delay: 2s;
+}
+#hero h1:nth-child(3) span {
+    animation-delay: 3s;
+}
+
+#hero .cta {
+    display: inline-block;
+    padding: 10px 30px;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid crimson;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 30px;
+    transition: .3s ease;
+    transition-property: background-color, color;
+}
+
+#hero .cta:hover {
+    color: #fff;
+    background-color:crimson;
+}
+/* End Hero Section */
+
+/* Keyframes */
+@keyframes text-reveal-box {
+    50% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+
+@keyframes text-reveal {
+    100%{
+        color: #fff;
+    }
+}
+
+@keyframes text-reveal-name {
+    100%{
+        color: crimson;
+    }
+}
+/* End Keyframes */
+
+
+.parent {
+    width: 500px;
+    height: 400px;
+    background: #000;
+}
+
+.child {
+    width: 250px;
+    height: 200px;
+    background: #333;
+}
+
+.parent:hover .child {
+    transform: translate3d(20px, 20px , 30px);
+}
